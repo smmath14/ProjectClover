@@ -1,0 +1,88 @@
+﻿@model JodhpurPalace.Models.PalaceRecord
+
+@{
+    ViewData["Title"] = "Details Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style=" color:black">Details Create</h2>
+
+<h4 style=" color: black">Palace Record Details</h4>
+<body style="background-image:url(https://scontent.fjai10-1.fna.fbcdn.net/v/t39.30808-6/259513852_2082571145228389_7405693325328285976_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=973b4a&_nc_ohc=Q3w9Ke3-EPIAX8i8iOi&_nc_ht=scontent.fjai10-1.fna&oh=00_AfAZxDGSYV-sO3TmA5SxdIa0Z1DxnG_DlmyIMmmMv4aYpQ&oe=63E73352); background-repeat: no-repeat; background-size:1500px 1000px;">
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="RCreate">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="Id" class="control-label"></label>
+                        <input asp-for="Id" class="form-control" />
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label" style="color:black"></label>
+                    <input asp-for="FirstName" class="form-control"/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label" style="color:black"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RoomNo" class="control-label" style="color:black"></label>
+                    <input asp-for="RoomNo" class="form-control" />
+                    <span asp-validation-for="RoomNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNo" class="control-label" style="color:black"></label>
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CheckIn" class="control-label"style="color:black"></label>
+                    <input asp-for="CheckIn" class="form-control" />
+                    <span asp-validation-for="CheckIn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CheckOut" class="control-label"style="color:black"></label>
+                    <input asp-for="CheckOut" class="form-control" />
+                    <span asp-validation-for="CheckOut" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Amount" class="control-label" style="color:black"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="No_Of_Rooms" class="control-label"style="color:black"></label>
+                    <input asp-for="No_Of_Rooms" class="form-control" />
+                    <span asp-validation-for="No_Of_Rooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Total_Person" class="control-label" style="color:black"></label>
+                    <input asp-for="Total_Person" class="form-control" />
+                    <span asp-validation-for="Total_Person" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RoomName" class="control-label" style="color:black"></label>
+                    <input asp-for="RoomName" class="form-control" />
+                    <span asp-validation-for="RoomName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    <input class="btn btn-danger" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a style="color:white" asp-action="MyList">Back to List</a>
+    </div>
+    </body>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<JodhpurPalace.Models.PalaceRecord>
+
+@{
+    ViewData["Title"] = "Guest List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:black"><b>Guest Details</b></h2>
+
+<p>
+    <a asp-action="RCreate">Create New </a>
+    <a style="padding-left:800px" asp-controller="Home" asp-action="MyHotels1">Booking Details</a>
+    <a asp-action="ACreate" style="padding-left :20px">Register Here</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr style="color:black">
+            <th hidden>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_Of_Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Person)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr style="color:black;">
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_Of_Rooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Person)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "GuestDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p style="padding-left:900px; font-size:11px; color:black"><b>*Amount is in Indian Rupee(₹)</b></p>
+
+<a asp-action="Create">Back</a>
