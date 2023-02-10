@@ -1,0 +1,101 @@
+﻿@model IEnumerable<JodhpurPalace.Models.GuestCart>
+
+@{
+    ViewData["Title"] = "Guest Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:black"><b>My Cart</b></h2>
+
+<p>
+    <a asp-action="MyHotels">Add More Rooms</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr style="color:black;font-size:18px">
+            <th hidden>
+                @Html.DisplayNameFor(model => model.GuestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_of_Days)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr style="color:black">
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.GuestId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomId)
+            </td>
+            <td style="font-size:15px">
+                <b>
+                    @Html.DisplayFor(modelItem => item.RoomName)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rooms)
+                
+                
+
+            </td>
+            <td>
+                @ViewBag.Total
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_of_Days) &nbsp; &nbsp; &nbsp;
+                
+            </td>
+            <td>
+                @Html.ActionLink("Edit Preference", "GuestListEdit", new { id = item.GuestId }) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                @Html.ActionLink("Delete", "DeleteList", new { id = item.GuestId })
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<a asp-action="MyHotels">Back</a>
+<div>
+    <a asp-action="Summary">
+        <input type="submit" value="Book Now" class="btn btn-success" style="margin-left:950px" />
+    </a>
+</div>
+
+

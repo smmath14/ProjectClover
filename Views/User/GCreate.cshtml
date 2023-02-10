@@ -1,0 +1,53 @@
+﻿@model JodhpurPalace.Models.GuestCalender
+
+@{
+    ViewData["Title"] = "GCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body style="background-image:url(https://img.traveltriangle.com/blog/wp-content/uploads/2018/11/umaid-bhawan-beautifully-decorated.jpg); background-repeat: no-repeat; background-size:1500px 790px;">
+
+
+    <h2 style="color:black"><b>Please Choose Your Dates</b></h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="GCreate">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CheckIn" class="control-label" style="color:black"></label>
+                    <input asp-for="CheckIn" class="form-control" />
+                    <span asp-validation-for="CheckIn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CheckOut" class="control-label" style="color:black"></label>
+                    <input asp-for="CheckOut" class="form-control" />
+                    <span asp-validation-for="CheckOut" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Guest" class="control-label" style="color:black"></label>
+                    <input asp-for="Guest" class="form-control" />
+                    <span asp-validation-for="Guest" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rooms" class="control-label" style="color:black"></label>
+                    <input asp-for="Rooms" class="form-control" />
+                    <span asp-validation-for="Rooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Create">Back to Login</a>
+        <a style="padding-left:20px" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+    </body>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

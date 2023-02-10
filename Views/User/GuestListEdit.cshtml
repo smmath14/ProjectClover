@@ -1,0 +1,66 @@
+﻿@model JodhpurPalace.Models.GuestCart
+
+@{
+    ViewData["Title"] = "GuestListEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:black"><b>Edit Quantity</b></h2>
+
+<h4 style="color:black">Please Add Quantity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GuestListEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="GuestId" class="control-label"></label>
+                <input asp-for="GuestId" class="form-control" />
+                <span asp-validation-for="GuestId" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="RoomId" class="control-label"></label>
+                <input asp-for="RoomId" class="form-control" />
+                <span asp-validation-for="RoomId" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="RoomName" class="control-label"></label>
+                <input asp-for="RoomName" class="form-control" />
+                <span asp-validation-for="RoomName" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="RoomType" class="control-label"></label>
+                <input asp-for="RoomType" class="form-control" />
+                <span asp-validation-for="RoomType" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rooms" class="control-label"></label>
+                <input asp-for="Rooms" class="form-control" />
+                <span asp-validation-for="Rooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="No_of_Days" class="control-label"></label>
+                <input asp-for="No_of_Days" class="form-control" />
+                <span asp-validation-for="No_of_Days" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="reset" value="Reset" class="btn btn-danger" />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GuestCart">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
